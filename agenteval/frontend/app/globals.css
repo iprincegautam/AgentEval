@@ -1,0 +1,137 @@
+:root {
+  --bg: #0a0c10;
+  --surface: #12151c;
+  --border: #2a3142;
+  --text: #e8ecf4;
+  --muted: #8b95a8;
+  --accent: #7c6af7;
+  --pass: #3dd68c;
+  --fail: #f07178;
+  --warn: #ffb454;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    "SF Pro Text",
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0 0 2rem;
+  line-height: 1.5;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge.pass {
+  background: color-mix(in srgb, var(--pass) 20%, transparent);
+  color: var(--pass);
+}
+
+.badge.fail {
+  background: color-mix(in srgb, var(--fail) 20%, transparent);
+  color: var(--fail);
+}
+
+.badge.warn {
+  background: color-mix(in srgb, var(--warn) 20%, transparent);
+  color: var(--warn);
+}
+
+button.primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input[type="url"] {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+input[type="url"]:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.taxonomy-item {
+  border-left: 3px solid var(--fail);
+  padding-left: 0.75rem;
+  margin: 0.5rem 0;
+}
+
+.taxonomy-item.medium {
+  border-left-color: var(--warn);
+}
+
+.check-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .check-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.progress {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+}
