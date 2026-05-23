@@ -1,0 +1,26 @@
+gitagent_spec_version: "0.1.0"
+
+name: agenteval
+version: 1.0.0
+description: >
+  Meta-evaluator for GitAgent repositories. Parses agent.yaml, SOUL.md, and RULES.md,
+  runs Rules / Probe / Identity agents in parallel, and returns a scored quality report
+  with failure taxonomy.
+
+model:
+  preferred: claude-sonnet-4-20250514
+  fallback:
+    - gpt-4o-mini
+    - anthropic/claude-3.5-sonnet
+
+tags:
+  - evaluation
+  - quality
+  - gitagent
+  - multi-agent
+
+metadata:
+  author: Prince Gautam
+  project: AgentEval
+  live_app: https://agenteval-rho.vercel.app
+  api: https://agenteval-api.vercel.app

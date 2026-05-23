@@ -14,6 +14,22 @@ Three specialized agents run in parallel:
 
 An orchestrator synthesizes all three into a scored report (0–100, A–F grade) with failure taxonomy.
 
+## GitAgent definition
+
+This repo includes a first-class GitAgent bundle at the repository root:
+
+- [`agent.yaml`](./agent.yaml) — manifest
+- [`SOUL.md`](./SOUL.md) — identity
+- [`RULES.md`](./RULES.md) — constraints
+
+You can evaluate this repo with AgentEval itself:
+
+```bash
+curl -X POST https://agenteval-api.vercel.app/evaluate \
+  -H "Content-Type: application/json" \
+  -d '{"repo_url": "https://github.com/iprincegautam/AgentEval"}'
+```
+
 ## Stack
 
 - Next.js 14 (TypeScript) — frontend
