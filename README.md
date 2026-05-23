@@ -23,7 +23,8 @@ An orchestrator synthesizes all three into a scored report (0–100, A–F grade
 
 ## Live demo
 
-[agenteval.vercel.app](https://agenteval.vercel.app) _(after deploy)_
+- **App:** [agenteval-rho.vercel.app](https://agenteval-rho.vercel.app)
+- **API:** [agenteval-api.vercel.app](https://agenteval-api.vercel.app)
 
 ## Run locally
 

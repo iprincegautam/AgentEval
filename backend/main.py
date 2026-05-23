@@ -57,6 +57,7 @@ def _cors_origins() -> list[str]:
 app.add_middleware(
     CORSMiddleware,
     allow_origins=_cors_origins(),
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -110,3 +111,12 @@ async def evaluate(body: EvaluateRequest):
         raise HTTPException(status_code=400, detail=str(e)) from e
     except RuntimeError as e:
         raise HTTPException(status_code=502, detail=str(e)) from e
+
+
+# Vercel serverless entrypoint
+try:
+    from mangum import Mangum
+
+    handler = Mangum(app, lifespan="off")
+except ImportError:
+    pass
